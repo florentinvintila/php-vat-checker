@@ -10,14 +10,15 @@
     }
   ],
   "require": {
-    "php": "^7.3",
+    "php": ">=7.3",
     "ext-json": "*",
     "ext-soap": "*",
-    "illuminate/contracts": "^8.22",
-    "illuminate/support": "^8.22"
+    "illuminate/contracts": "^11",
+    "illuminate/support": "^11"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.5|^8.5"
+    "friendsofphp/php-cs-fixer": "^3.65",
+    "phpunit/phpunit": "^11.4"
   },
   "autoload": {
     "psr-4": {

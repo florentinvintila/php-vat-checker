@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class FakeApiGatewayTest extends TestCase
 {
-    use ApiGatewayContractTest;
+    use ApiGatewayContractAbstract;
 
     protected function getApiGateway(): ApiGateway
     {

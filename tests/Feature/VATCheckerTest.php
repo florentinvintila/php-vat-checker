@@ -21,18 +21,18 @@ class VATCheckerTest extends TestCase
         $this->checker = new VATChecker();
         $this->checker->setApiGateway(new FakeGateway());
     }
-
+    #[Test]
     /** @test */
     public function should_return_a_valid_vat_response()
     {
-        $countryCode = 'NL';
-        $vatNumber = '854502130B01';
+        $countryCode = 'RO';
+        $vatNumber = '11530967';
 
         $response = $this->checker->check($countryCode, $vatNumber);
 
         $this->assertInstanceOf(VATResponse::class, $response);
-        $this->assertEquals('NL', $response->country_code);
-        $this->assertEquals('854502130B01', $response->vat_number);
+        $this->assertEquals('RO', $response->country_code);
+        $this->assertEquals('11530967', $response->vat_number);
         $this->assertEquals(DateTime::createFromFormat('Y-m-dP', date('Y-m-dP')), $response->requested_at);
         $this->assertEquals('UNICORN B.V.', $response->company_name);
         $this->assertEquals('UNICORN STREET 007', $response->address);
@@ -41,12 +41,12 @@ class VATCheckerTest extends TestCase
         $this->assertEquals('UNICORN STREET 007\n
             1108DH AMSTERDAM', $response->original_address);
     }
-
+    
     /** @test */
     public function should_throw_an_invalid_vat_exception_for_being_an_invalid_vat_number()
     {
         $countryCode = 'BR';
-        $vatNumber = '854502130B01';
+        $vatNumber = '11530967';
 
         $this->expectException(InvalidVATException::class);
 
@@ -56,17 +56,18 @@ class VATCheckerTest extends TestCase
     /** @test */
     public function should_be_a_valid_vat_number()
     {
-        $countryCode = 'NL';
-        $vatNumber = '854502130B01';
+        $countryCode = 'RO';
+        $vatNumber = '11530967';
 
         $this->assertTrue($this->checker->isValid($countryCode, $vatNumber));
     }
 
+    
     /** @test */
     public function should_be_an_invalid_vat_number()
     {
         $countryCode = 'BR';
-        $vatNumber = '854502130B01';
+        $vatNumber = '11530967';
 
         $this->assertFalse($this->checker->isValid($countryCode, $vatNumber));
     }

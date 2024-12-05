@@ -19,22 +19,22 @@ class ImmutableObject implements ArrayAccess, Arrayable, Jsonable, JsonSerializa
         $this->data = $data;
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return array_key_exists($offset, $this->data);
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->data[$offset];
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         throw new LogicException('This object is immutable.');
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw new LogicException('This object is immutable.');
     }
@@ -75,7 +75,7 @@ class ImmutableObject implements ArrayAccess, Arrayable, Jsonable, JsonSerializa
         return $json;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->toJson();
     }

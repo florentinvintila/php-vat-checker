@@ -28,7 +28,7 @@ class FakeGateway implements ApiGateway
             );
         }
 
-        if ($countryCode !== 'NL' || $vatNumber !== '854502130B01') {
+        if ($countryCode !== 'RO' || $vatNumber !== '11530967') {
             throw new InvalidVATException();
         }
 

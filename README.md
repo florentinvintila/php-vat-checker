@@ -1,9 +1,9 @@
 # PHP VAT Checker
 
-[![Latest Version](https://img.shields.io/github/release/jairforo/php-vat-checker.svg?style=flat-square)](https://github.com/jairforo/php-vat-checker/releases)
-[![Build Status](https://img.shields.io/travis/ubient/laravel-pwned-passwords/master.svg?style=flat-square)](https://travis-ci.com/github/jairforo/php-vat-checker)
-[![StyleCI](https://styleci.io/repos/226907554/shield)](https://styleci.io/repos/226907554)
-[![Total Downloads](https://img.shields.io/packagist/dt/jairforo/php-vat-checker.svg?style=flat-square)](https://packagist.org/packages/jairforo/php-vat-checker)
+<!-- [![Latest Version](https://img.shields.io/github/release/florentinvintila/php-vat-checker.svg?style=flat-square)](https://github.com/florentinvintila/php-vat-checker/releases) -->
+<!-- [![Build Status](https://img.shields.io/travis/ubient/laravel-pwned-passwords/master.svg?style=flat-square)](https://travis-ci.com/github/florentinvintila/php-vat-checker) -->
+<!-- [![StyleCI](https://styleci.io/repos/226907554/shield)](https://styleci.io/repos/226907554) -->
+<!-- [![Total Downloads](https://img.shields.io/packagist/dt/florentinvintila/php-vat-checker.svg?style=flat-square)](https://packagist.org/packages/florentinvintila/php-vat-checker) -->
 
 
 A PHP package that helps you to check information about Union European companies through the combination of VAT number and Country code. This package is an interface to consume the SOAP API webservice provided by the European Commission. (http://ec.europa.eu/taxation_customs/vies/checkVatTestService.wsdl)
@@ -13,7 +13,7 @@ A PHP package that helps you to check information about Union European companies
 You can install the package via composer:
 
 ```bash
-composer require jairforo/php-vat-checker
+composer require florentinvintila/php-vat-checker
 ```
 
 ## Usage

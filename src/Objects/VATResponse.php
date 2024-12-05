@@ -10,11 +10,11 @@ class VATResponse extends ImmutableObject
         string $countryCode,
         string $vatNumber,
         DateTime $requestedAt,
-        string $companyName = null,
-        string $address = null,
-        string $zipcode = null,
-        string $city = null,
-        string $originalAddress = null
+        ?string $companyName = null,
+        ?string $address = null,
+        ?string $zipcode = null,
+        ?string $city = null,
+        ?string $originalAddress = null
     ) {
         parent::__construct([
             'country_code' => $countryCode,
