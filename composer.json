@@ -1,5 +1,5 @@
 {
-  "name": "jairforo/php-vat-checker",
+  "name": "florentinvintila/php-vies-checker",
   "description": "PHP VAT checker based on the European Commission web service",
   "keywords": ["vat", "validation", "vies", "php", "checker", "checkVatService"],
   "license": "BSD-2-Clause",
@@ -7,7 +7,11 @@
     {
       "name": "Jair Foro",
       "email": "jairforo@gmail.com"
-    }
+    },
+    {
+			"name": "Florentin Vintila",
+			"role": "Developer, maintainer"
+		}
   ],
   "require": {
     "php": ">=7.3",
