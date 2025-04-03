@@ -11,10 +11,6 @@ use ReflectionException;
 
 class VATCheckerTest extends TestCase
 {
-    /**
-     * @test
-     * @throws ReflectionException
-     */
     #[Test]
     public function should_be_able_to_swap_api_gateways()
     {

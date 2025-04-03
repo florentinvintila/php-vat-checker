@@ -8,6 +8,7 @@ use JairForo\VATChecker\Exceptions\InvalidVATException;
 use JairForo\VATChecker\Objects\VATResponse;
 use JairForo\VATChecker\VATChecker;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class VATCheckerTest extends TestCase
 {
@@ -21,8 +22,8 @@ class VATCheckerTest extends TestCase
         $this->checker = new VATChecker();
         $this->checker->setApiGateway(new FakeGateway());
     }
+
     #[Test]
-    /** @test */
     public function should_return_a_valid_vat_response()
     {
         $countryCode = 'RO';
@@ -42,7 +43,7 @@ class VATCheckerTest extends TestCase
             1108DH AMSTERDAM', $response->original_address);
     }
     
-    /** @test */
+    #[Test]
     public function should_throw_an_invalid_vat_exception_for_being_an_invalid_vat_number()
     {
         $countryCode = 'BR';
@@ -53,7 +54,7 @@ class VATCheckerTest extends TestCase
         $this->checker->check($countryCode, $vatNumber);
     }
 
-    /** @test */
+    #[Test]
     public function should_be_a_valid_vat_number()
     {
         $countryCode = 'RO';
@@ -62,8 +63,7 @@ class VATCheckerTest extends TestCase
         $this->assertTrue($this->checker->isValid($countryCode, $vatNumber));
     }
 
-    
-    /** @test */
+    #[Test]
     public function should_be_an_invalid_vat_number()
     {
         $countryCode = 'BR';

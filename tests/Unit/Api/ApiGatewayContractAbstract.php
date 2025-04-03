@@ -6,6 +6,7 @@ use DateTime;
 use JairForo\VATChecker\Api\ApiGateway;
 use JairForo\VATChecker\Exceptions\InvalidVATException;
 use JairForo\VATChecker\Objects\VATResponse;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * This file exists as a bridge, creating a best-of-both-worlds situation.
@@ -18,7 +19,6 @@ trait ApiGatewayContractAbstract
     abstract protected function getApiGateway(): ApiGateway;
 
     #[Test]
-    /** @test */
     public function should_throw_an_invalid_vat_exception_for_having_an_invalid_country_code()
     {
         $this->expectException(InvalidVATException::class);
@@ -27,7 +27,6 @@ trait ApiGatewayContractAbstract
     }
 
     #[Test]
-    /** @test */
     public function should_throw_an_invalid_vat_exception_for_having_an_invalid_vat_number()
     {
         $this->expectException(InvalidVATException::class);
@@ -36,10 +35,9 @@ trait ApiGatewayContractAbstract
     }
 
     #[Test]
-    /** @test */
     public function should_return_an_response_without_name_and_address_data()
     {
-        $response = $this->getApiGateway()->check('DE', '811191002');
+        $response = $this->getApiGateway()->check('DE', '120353372');
 
         $this->assertInstanceOf(VATResponse::class, $response);
 
@@ -50,7 +48,6 @@ trait ApiGatewayContractAbstract
     }
 
     #[Test]
-    /** @test */
     public function should_return_a_valid_vat_response()
     {
         $response = $this->getApiGateway()->check('RO', '11530967');

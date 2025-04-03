@@ -20,7 +20,7 @@ class FakeGateway implements ApiGateway
      */
     public function check(string $countryCode, string $vatNumber): VATResponse
     {
-        if ($countryCode === 'DE' && $vatNumber === '811191002') {
+        if ($countryCode === 'DE' && $vatNumber === '120353372') {
             return new VATResponse(
                 $countryCode,
                 $vatNumber,
